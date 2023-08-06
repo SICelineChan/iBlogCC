@@ -1,0 +1,26 @@
+.container-fluid {
+  padding-left: 30px;
+}
+.navbar {
+  background-color: #104547;
+}
+.nav-link {
+  color: #faf3f0;
+}
+#publish {
+  margin-top: 5px;
+  background-color: #3587a4;
+}
+footer {
+  position: absolute;
+  text-align: center;
+  bottom: 0;
+  width: 100%;
+  height: 60px;
+  background-color: #104547;
+}
+footer p {
+  font-size: 1rem;
+  margin-top: 30px;
+  color: #faf3f0;
+}
