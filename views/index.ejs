@@ -1,7 +1,16 @@
 <%- include('partials/header'); -%>
 <div class="container-fluid">
     <h1>Hello World!</h1>
-    <p><%= home%></p>
+    <p><%= intro%></p>
+    
+    <% posts.forEach(function(post){ %>
+    <%    console.log(post.title) }); %>
+ 
+
+    
+    
+
+
 </div>
 <%- include('partials/footer'); -%>
 

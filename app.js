@@ -13,8 +13,17 @@ app.use(express.static("public"));
 app.set("view engine", "ejs")
 app.use(express.urlencoded({extended: false}))
 
+let newBlogs = [];
+
 app.get("/", function (req, res) {
-    res.render("index", {home: homeBeginningContent});
+
+    
+
+
+    res.render("index", 
+    {intro: homeBeginningContent,
+    posts: newBlogs}
+    );
     
     });
 
@@ -31,10 +40,14 @@ app.get("/compose", function (req, res) {
 
         
         });
-     // req.body.(name of the input name) 
+//Here we record when user type something in the iput box, hence req.body.(name of the input name) 
 app.post("/compose", function(req, res){
-   
-    console.log(req.body.postNew);
+   let newBlog = {
+    title: req.body.newTitle,
+    post: req.body.newPost
+   }
+   newBlogs.push(newBlog);
+    res.redirect("/");
     
 
 })
