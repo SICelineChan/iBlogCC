@@ -1,4 +1,5 @@
 const express = require("express")
+const _ = require("lodash")
 const cors = require('cors')
 
 const homeBeginningContent = "This is another blog using the London App Brewery, Dr Angela Yu's Udemy course material. Also with some materials from Hamburg Coding School, Node.js course.";
@@ -28,6 +29,7 @@ app.get("/about", function (req, res) {
 res.render("about", {about: aboutContent});
 
 });
+
 app.get("/contact", function (req, res) {
     res.render("contact", {contact: contactPage});
     
@@ -49,7 +51,24 @@ app.post("/compose", function(req, res){
 
 })
 
+app.get('/posts/:postName', (req, res) => {
+    const requestedTitle = _.lowerCase(req.params.postName);
+    
+    newBlogs.forEach(function(blog){
+    const storedTitle = _.lowerCase(blog.title);
+    
+    if (requestedTitle === storedTitle) {
+        res.render("post", {
+            title: blog.title,
+            content: blog.content
+        });
 
+    } 
+
+   });
+  
+
+  });
 
 
 
