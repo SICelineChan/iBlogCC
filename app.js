@@ -41,7 +41,11 @@ app.get("/compose", function (req, res) {
         });
 //Here we record when user type something in the iput box, hence req.body.(name of the input name) 
 app.post("/compose", function(req, res){
+
+   
+
    let newBlog = {
+
     title: req.body.newTitle,
     content: req.body.newContent
    }
