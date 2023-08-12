@@ -1,11 +1,15 @@
 <%- include('partials/header'); -%>
-<div class="container-fluid">
+<div class="container-fluid container-md">
     <h1>Hello World!</h1>
     <p><%= intro%></p>
     
     <% posts.forEach(function(post){ %>
-    <%    console.log(post.title) }); %>
+    <h1><%= post.title %></h1>
+    <p><%= post.content %></p>
+    <%    }) %>
+
  
+    
 
     
     

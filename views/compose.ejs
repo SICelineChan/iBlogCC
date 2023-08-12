@@ -1,12 +1,12 @@
 <%- include('partials/header'); -%>
-<div class="container-fluid">
+<div class="container-fluid container-md">
     <h1>Compose</h1>
     <form action="/compose" method="post">
     <label for="formGroupExampleInput" class="form-label">Blog Title</label>
     <input type="text" class="form-control" name="newTitle" placeholder="write your post here"/>
        
     <label for="formGroupExampleInput2" class="form-label">Blog Post</label>
-    <textarea name="newPost" class="form-control" aria-label="With textarea"></textarea>
+    <textarea name="newContent" class="form-control" aria-label="With textarea"></textarea>
     <button type="submit" name="button" class="btn btn-outline-light" id="publish">Publish</button>
     </form>
         

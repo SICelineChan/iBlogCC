@@ -17,9 +17,6 @@ let newBlogs = [];
 
 app.get("/", function (req, res) {
 
-    
-
-
     res.render("index", 
     {intro: homeBeginningContent,
     posts: newBlogs}
@@ -44,7 +41,7 @@ app.get("/compose", function (req, res) {
 app.post("/compose", function(req, res){
    let newBlog = {
     title: req.body.newTitle,
-    post: req.body.newPost
+    content: req.body.newContent
    }
    newBlogs.push(newBlog);
     res.redirect("/");
